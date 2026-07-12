@@ -1,0 +1,19 @@
+@page
+@model VulnerabilidadesModel
+@{
+    ViewData["Title"] = "Vulnerabilidades (DDM)";
+}
+
+<h2>Vulnerabilidades</h2>
+<p class="text-muted">
+    Enmascaramiento Dinámico de Datos (DDM): el código CVE y la descripción se muestran reales
+    solo si tu usuario tiene el permiso <code>UNMASK</code>, ya que describen exactamente cómo
+    es vulnerable un activo, incluso mientras sigue sin parchear.
+</p>
+
+@if (Model.Error != null)
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<partial name="_TablaDatos" model="Model.Tabla" />

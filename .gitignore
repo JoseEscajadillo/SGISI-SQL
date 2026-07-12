@@ -1,0 +1,18 @@
+## Build artifacts (.NET)
+bin/
+obj/
+.vs/
+*.user
+
+## LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+## OS
+Thumbs.db
+.DS_Store

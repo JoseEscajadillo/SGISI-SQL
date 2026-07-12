@@ -1,0 +1,20 @@
+@page
+@model SupervisionModel
+@{
+    ViewData["Title"] = "Supervisión (DDM)";
+}
+
+<h2>Supervisión</h2>
+<p class="text-muted">
+    Especialización de ANALISTA en Supervisor / Supervisado. Enmascaramiento Dinámico de Datos
+    (DDM): el número de analistas a cargo, el nivel de experiencia y el área de operación se
+    muestran reales solo con el permiso <code>UNMASK</code>, por el mismo criterio que el nivel
+    de acceso: es jerarquía interna del personal, no información que un cliente externo necesite.
+</p>
+
+@if (Model.Error != null)
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<partial name="_TablaDatos" model="Model.Tabla" />

@@ -1,0 +1,14 @@
+@page
+@model AlertasModel
+@{
+    ViewData["Title"] = "Alertas";
+}
+
+<h2>Alertas</h2>
+
+@if (Model.Error != null)
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<partial name="_TablaDatos" model="Model.Tabla" />

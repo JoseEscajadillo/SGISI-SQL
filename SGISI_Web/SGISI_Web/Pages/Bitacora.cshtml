@@ -1,0 +1,15 @@
+@page
+@model BitacoraModel
+@{
+    ViewData["Title"] = "Bitácora";
+}
+
+<h2>Bitácora de Auditoría</h2>
+<p class="text-muted">Registra automáticamente cada cambio (alta/cierre) sobre los incidentes: quién, cuándo, y los valores antes/después.</p>
+
+@if (Model.Error != null)
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<partial name="_TablaDatos" model="Model.Tabla" />

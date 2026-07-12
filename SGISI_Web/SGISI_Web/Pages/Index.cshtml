@@ -1,0 +1,124 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-5">SGISI</h1>
+    <p class="text-muted">Sistema de Gestión de Incidentes de Seguridad Informática</p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Incidentes</h5>
+                <p class="card-text">Ver el listado de incidentes registrados.</p>
+                <a asp-page="/Incidentes" class="btn btn-primary">Ver incidentes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Resumen de Seguridad (Cursor)</h5>
+                <p class="card-text">Resumen por analista, calculado con un cursor T-SQL en el servidor.</p>
+                <a asp-page="/Resumen" class="btn btn-primary">Ver resumen</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Bitácora de Auditoría</h5>
+                <p class="card-text">Historial de cambios (registro/cierre) sobre los incidentes.</p>
+                <a asp-page="/Bitacora" class="btn btn-primary">Ver bitácora</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Analistas (DDM)</h5>
+                <p class="card-text">
+                    Listado de analistas. El correo, teléfono y nivel de acceso se muestran
+                    enmascarados o reales según el rol de la sesión (Enmascaramiento Dinámico de Datos).
+                </p>
+                <a asp-page="/Analistas" class="btn btn-primary">Ver analistas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Organizaciones</h5>
+                <p class="card-text">Departamentos/organizaciones atendidas por la consultora.</p>
+                <a asp-page="/Organizaciones" class="btn btn-outline-primary">Ver organizaciones</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Activos (DDM)</h5>
+                <p class="card-text">
+                    Activos tecnológicos administrados por cada organización. La IP y el sistema
+                    operativo se enmascaran para no exponer huella técnica de infraestructura.
+                </p>
+                <a asp-page="/Activos" class="btn btn-outline-primary">Ver activos</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Vulnerabilidades (DDM)</h5>
+                <p class="card-text">
+                    Vulnerabilidades detectadas sobre los activos. El CVE y la descripción se
+                    enmascaran mientras no se tenga el permiso UNMASK.
+                </p>
+                <a asp-page="/Vulnerabilidades" class="btn btn-outline-primary">Ver vulnerabilidades</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Alertas</h5>
+                <p class="card-text">Alertas generadas por los activos, algunas escaladas a incidentes.</p>
+                <a asp-page="/Alertas" class="btn btn-outline-primary">Ver alertas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Incidente &ndash; Activo</h5>
+                <p class="card-text">Asociación N:M entre incidentes y los activos comprometidos.</p>
+                <a asp-page="/IncidenteActivo" class="btn btn-outline-primary">Ver asociaciones</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Supervisión (DDM)</h5>
+                <p class="card-text">
+                    Especialización de analistas en Supervisor / Supervisado. Los atributos de
+                    jerarquía interna se enmascaran igual que el nivel de acceso.
+                </p>
+                <a asp-page="/Supervision" class="btn btn-outline-primary">Ver supervisión</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Reportes</h5>
+                <p class="card-text">Conclusiones y recomendaciones generadas al cerrar incidentes.</p>
+                <a asp-page="/Reportes" class="btn btn-outline-primary">Ver reportes</a>
+            </div>
+        </div>
+    </div>
+</div>

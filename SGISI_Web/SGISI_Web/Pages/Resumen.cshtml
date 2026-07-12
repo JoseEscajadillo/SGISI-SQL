@@ -1,0 +1,15 @@
+@page
+@model ResumenModel
+@{
+    ViewData["Title"] = "Resumen de Seguridad";
+}
+
+<h2>Resumen de Seguridad por Analista</h2>
+<p class="text-muted">Calculado con <code>sp_ResumenSeguridadPorAnalista</code>, un procedimiento que usa un cursor T-SQL para recorrer cada analista.</p>
+
+@if (Model.Error != null)
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<partial name="_TablaDatos" model="Model.Tabla" />
